@@ -8,8 +8,7 @@ def AVGList(list):
 
 while True:
     try:
-        print('Enter num of values:')
-        numValues = int(input())
+        numValues = int(input('Enter num of values:'))
         listValues = []
 
         for i in range(numValues):
