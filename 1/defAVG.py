@@ -3,7 +3,7 @@ import sys
 def AVGList(list):
     sumList = sum(list)
     count = len(list)
-    avg = sumList//count
+    avg = sumList//count #or use func round in print result like {round(result)}
     return avg
 
 while True:
