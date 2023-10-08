@@ -21,6 +21,6 @@ while True:
         break
 
     except Exception as e:
-        print(f'РћС€РёР±РєР°:{e}')
+        print(f'Error:{e}')
 
 sys.exit()

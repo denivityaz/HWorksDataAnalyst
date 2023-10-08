@@ -10,6 +10,6 @@ while True:
         print(result)
         break
     except Exception as e:
-        print(f'Ошибка:{e}')
+        print(f'Error:{e}')
 
 sys.exit()
