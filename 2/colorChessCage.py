@@ -1,26 +1,22 @@
 import sys
 
-def blckOrWht(i,j):    
-    if i % 2 == 0 and j % 2 == 0: 
-        return "black"
-    else: 
-        return "white" 
+def isBlack(row, col):
+    return (row + col) % 2 == 0
 
 while True:
     try:
-        num = float(input("Enter coordinates chess square through a point: "))
-        x = int(num)
-        y = int((num - x) * 10)
+        pos = input("Enter coordinates chess square through a point: ")  
+        x, y = map(int, pos.split('.'))                                 #разделяем число
 
-        if x < 9 and y < 9: 
-            result = blckOrWht(x,y)  
-            print(f'Ur square - {result}')
+        if 0 < x < 9 and 0 < y < 9:                                 #фильтрация
+            result = "black" if isBlack(x,y) else "white"
+            print(f"This square is {result}")
+            break
         else:
-            print("Incorrect coordinates") 
-
-        break
+            print("The coordinates should be in the range from 1.1 to 8.8.")
 
     except Exception as e:
         print(f'Error:{e}')
 
 sys.exit()
+
