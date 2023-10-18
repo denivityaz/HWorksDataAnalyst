@@ -1,4 +1,5 @@
 import sys
+import math
 
 def factorial(x):
     fac = 1
@@ -13,7 +14,9 @@ def factorial_2(x):         #дедовский метод из сишарпа
 while True:
     try:
         num = int(input('Enter num:'))
-        print("Factorial of ur num = ", factorial(num))
+        # print(f"{num}! = {factorial(num)}")  #если бы юзали свою функцию
+        fac = math.factorial(num)
+        print(f"{num}! = {fac}")
         break
 
     except Exception as e:
