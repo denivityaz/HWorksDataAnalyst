@@ -96,7 +96,8 @@ class Main:
 
         elif select == "3": 
             list = user.getStr("Enter a list of numbers separated by a space:")  
-            func.maxValuesWithNotMax(list)
+            result = func.maxValuesWithNotMax(list)
+            print('\n', result)
             user.getEnter()
 
         elif select == "0": 
