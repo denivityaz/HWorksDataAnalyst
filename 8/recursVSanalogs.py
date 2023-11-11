@@ -96,10 +96,10 @@ class Main:
         "Линейный поиск": linear_search_max,
         "Метод reduce": reduce_max,
         "Сортировка и возврат последнего значения": sort_max,
-        "Дефолтная функция max() Python, но вообще это C": maxFuncPy,
-        "Разделяй и всластвуй CS50 посмотрели и типо умные":find_max_divide_and_conquer,
-        "Нейронка делала рекурсию, видимо ну не получилось у нее": find_max_recursively,
-        "А это моя, не украл, а переделал предыдущую": recursiveByMe
+        "Дефолтная функция max()": maxFuncPy,
+        "Разделяй и всластвуй":find_max_divide_and_conquer,
+        "Промпт нейронке рекурсия": find_max_recursively,
+        "Рекурсия (дз)": recursiveByMe
     }
     # Вывод
     for size in sizes:
@@ -108,6 +108,6 @@ class Main:
             avg_time = average_time(algo_func, size, repetitions)
             if avg_time:
                 print(colored(f"{algo_name}", "blue", attrs=['bold']))
-                print(colored(f"AVG Time: {avg_time:.9f}\n", "white"))
+                print(f"{colored('AVG Time:', 'magenta')} {colored('{:.9f}'.format(avg_time), 'white')}\n")
             else:
                 print(f"{algo_name}: Error. I think this is recursive method")
