@@ -53,3 +53,21 @@ key_data = pd.Series(another_data)
 key_where_not_3 = key_data[key_data.index % 3 != 0]
 print(key_where_not_3)
 
+
+'''
+1. Считайте данные из файла "students.csv" с помощью метода read_csv.
+2. Выведите первые 3 строки датафрейма с помощью метода head.
+3. Выведите последние 2 строки датафрейма с помощью метода tail.
+4. Получите общую информацию о датафрейме с помощью метода info.
+'''
+
+df_students = pd.read_csv("students.csv")
+print('\nВесь файл')
+print(df_students)
+
+print("\nПервые 3 строки датафрейма:")
+print(df_students.head(3))
+print("\nПоследние 2 строки датафрейма:")
+print(df_students.tail(2))
+print("\nИнформация о датафрейме:")
+print(df_students.info())
