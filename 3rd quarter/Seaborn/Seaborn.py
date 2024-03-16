@@ -17,9 +17,15 @@ df = pd.read_csv('Customers.csv')
 df_encoded = pd.get_dummies(df, columns=['Gender', 'Profession'])
 df_corr = df_encoded.corr()
 
-plt.figure('Анализ Customers',figsize=(10, 8), facecolor='#FFE4E1')
-sb.heatmap(df_corr, cmap='bwr', annot=True, fmt=".2f")
-plt.title('Корреляция с seaborn', loc='center')
+plt.figure('Анализ Customers',
+           figsize=(10, 8), 
+           facecolor='#FFE4E1')
+sb.heatmap(df_corr, 
+           cmap='bwr', 
+           annot=True, 
+           fmt=".2f")
+plt.title('Корреляция с seaborn', 
+          loc='center')
 plt.xticks(rotation=90)
 plt.yticks(rotation=0)
 plt.tight_layout()
@@ -27,15 +33,25 @@ plt.show()
 
 # Маска для скрытия верхней части матрицы корреляции
 mask = np.triu(np.ones_like(df_corr, dtype=bool))
-plt.figure('Анализ Customers',figsize=(10, 8), facecolor='#FFE4E1')
-sb.heatmap(df_corr, cmap='bwr', annot=True, fmt=".2f", mask=mask)
+plt.figure('Анализ Customers',
+           figsize=(10, 8), 
+           facecolor='#FFE4E1')
+sb.heatmap(df_corr, cmap='bwr', 
+           annot=True, fmt=".2f", 
+           mask=mask)
 plt.title('Треугольная тепловая карта корреляции')
 plt.tight_layout()
 plt.show()
 
-plt.figure('Анализ Customers',figsize=(10, 8), facecolor='#FFE4E1')
+plt.figure('Анализ Customers',
+           figsize=(10, 8), 
+           facecolor='#FFE4E1')
 #sb.kdeplot(x='Annual Income ($)', y='Family Size', data=df, cmap='viridis', fill=True)
-sb.scatterplot(x='Annual Income ($)', y='Family Size', data=df, alpha=0.5, color='blue')
+sb.scatterplot(x='Annual Income ($)', 
+               y='Family Size', 
+               data=df, 
+               alpha=0.5, 
+               color='blue')
 plt.title('Соотношение годового дохода и размера семьи')
 plt.xlabel('Годовой доход ($)')
 plt.ylabel('Размер семьи')
@@ -46,7 +62,12 @@ plt.show()
 # а в датасете возраст у многих указан 0 1 и другие нереальные значения
 plt.figure(figsize=(10, 6))
 
-sb.scatterplot(x='Profession', y='Annual Income ($)', hue='Age', data=df, alpha=0.7, palette='viridis')
+sb.scatterplot(x='Profession', 
+               y='Annual Income ($)', 
+               hue='Age', 
+               data=df, 
+               alpha=0.7, 
+               palette='viridis')
 plt.title('Уровень дохода по профессиям, полу и возрасту')
 plt.xlabel('Профессия')
 plt.ylabel('Уровень дохода ($)')
